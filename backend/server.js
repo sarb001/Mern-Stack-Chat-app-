@@ -10,7 +10,7 @@ app.get('/' , (req,res) => {
 })
 
         // For Displaying Chat   
-app.get('/api/chat' , (req,res) => {
+app.get('/api/chat/' , (req,res) => {
     res.send(chats);
 })
 
