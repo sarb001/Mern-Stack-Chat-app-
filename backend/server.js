@@ -11,6 +11,8 @@ dotenv.config();
 //connecting to DB 
 connectdb();
 
+app.use(express.json());        // to Accept json data 
+
 app.use('/api/user' , UserRoutes);
 
 const PORT = process.env.PORT || 4000;
