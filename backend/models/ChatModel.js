@@ -4,13 +4,13 @@ const chatModel = mongoose.Schema(
     {
         chatName : {type : String , trim: true},
         isGroupChat : {type : Boolean , default : false},
-              users: [
+              users: [                                          // Will help to Get User 
                 {
                     type :  mongoose.Schema.Types.ObjectId,
-                    ref : 'User',
+                    ref : 'User',       // will be used in Controller 
                 }
                 ],
-                latestmessage: 
+                latestMessage:                                  // will help to get LatestMessage 
                 {
                         type :  mongoose.Schema.Types.ObjectId,
                         ref : 'Message',

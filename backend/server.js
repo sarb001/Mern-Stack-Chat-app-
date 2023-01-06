@@ -1,9 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const { chats } = require('./data/data');
 const connectdb = require('./config/db');
 
 const UserRoutes = require('./Routes/UserRoutes');
+
+const ChatRoutes = require('./Routes/ChatRoutes');
 
 const app = express();
 dotenv.config();
@@ -15,7 +16,7 @@ app.use(express.json());        // to Accept json data
 
 app.use('/api/user' , UserRoutes);       // Route for users only 
 
-
+app.use('/api/chat' ,ChatRoutes);                                // Route for Authenticated user to Create Chat Only     
 
 
 const PORT = process.env.PORT || 4000;
