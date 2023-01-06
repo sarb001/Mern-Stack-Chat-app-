@@ -6,7 +6,6 @@ const asyncHandler = require('express-async-handler');
 const protect = asyncHandler(async (req, res , next) => {
 
     let token;
-
     if(
         req.headers.authorization && 
         req.headers.authorization.startsWith('Bearer')
@@ -17,8 +16,8 @@ const protect = asyncHandler(async (req, res , next) => {
              const decoded = jwt.verify(token, process.env.JWT_SECRET);
              
              // Find the User by ID without Selecting Password   
-              req.user = await User.findById(decoded.id).select('-password');  
-             next();
+              req.user = await User.findById(decoded.id).select("-password");  
+              next();
 
         }catch(error)
         {
@@ -32,5 +31,6 @@ const protect = asyncHandler(async (req, res , next) => {
         throw new Error(" Not Authorized , No Token ");
     }
 });  
+
 
 module.exports = { protect };
