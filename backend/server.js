@@ -13,15 +13,13 @@ connectdb();
 
 app.use(express.json());        // to Accept json data 
 
-app.use('/api/user' , UserRoutes);
+app.use('/api/user' , UserRoutes);       // Route for users only 
+
+
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, console.log(`Running Server at port ${PORT} Bro`))
-
-
-
-
-
 
 
 
