@@ -3,6 +3,7 @@ const User = require('../models/UserModel');
 const asyncHandler = require('express-async-handler');
 const generatetoken = require('../config/GenerateToken');
 
+// Registering User 
 const registerUser = asyncHandler(async(req,res) => {
 
     const {name,email ,password ,pic} = req.body;
@@ -38,6 +39,7 @@ const registerUser = asyncHandler(async(req,res) => {
     }
 })
 
+// Logging IN 
 const authUser = asyncHandler(async (req,res) => {
 
     const { email ,password } = req.body;
@@ -58,5 +60,9 @@ const authUser = asyncHandler(async (req,res) => {
     }
 })
 
+// get all Users  with Query Paramter 
 
-module.exports =  { registerUser ,authUser };
+
+
+
+module.exports =  { registerUser ,authUser ,allUsers };
