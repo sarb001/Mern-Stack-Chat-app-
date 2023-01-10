@@ -60,11 +60,9 @@ const authUser = asyncHandler(async (req,res) => {
     }
 })
 
-
 // get all Users  with Query Paramter 
 const allUsers = asyncHandler(async  (req,res) => {
-    
- const keyword = req.query.search ? 
+    const keyword = req.query.search ? 
  {
     $or : [
         {  name  : { $regex : req.query.search ,  $options : "i" }},
@@ -75,7 +73,7 @@ const allUsers = asyncHandler(async  (req,res) => {
     // Find the user with query  +  Get id except the user Searching it  
  
     // For Getting all User a User need to be Authenticated First with  Tokens 
-         const users = await User.find(keyword).find({_id : { $ne : req.user._id} });
+         const users = await User.find(keyword).find({ _id : { $ne : req.user._id} });
          res.send(users);
 });
 

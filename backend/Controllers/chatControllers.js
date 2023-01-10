@@ -3,6 +3,7 @@ const Chat = require('../models/ChatModel');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/UserModel');
 
+// For creating One -- One Chat 
 const accesschat =  asyncHandler(async (req,res) => {
 
      const {  userid  } = req.body;         // get the user id current 

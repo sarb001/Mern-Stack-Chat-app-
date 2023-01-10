@@ -9,8 +9,9 @@ router.route('/').post(registerUser)
 
 // For Get Request 
 // Protect is Middleware which to used to Verify Author 
-
 router.route('/').get(protect ,allUsers);
+
+
 // Route to Login 
 router.route('/login').post(authUser);
 
