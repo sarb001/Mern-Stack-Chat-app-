@@ -61,5 +61,13 @@ io.on('connection' , (socket) => {
             socket.in(chat._id).emit("message recieved" , newMessageRecieved);
         });
     });
+
+
+    //when left the chat or  user Disconncted 
+    socket.off("setup" , () => {
+        console.log("USER DISCONNECTED");
+        socket.leave(userdata._id);
+    })
+
 })
 
