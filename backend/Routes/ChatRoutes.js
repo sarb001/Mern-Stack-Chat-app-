@@ -10,7 +10,7 @@ router.route('/').get(protect ,fetchChats);     // Fetch All chats
 
 router.route('/group').post(protect , creategroupchat);  // create Group Chat 
 
-router.route('/rename').put(protect , renamegroup);  // Rename  Group Chat 
+router.route('/rename').put(protect , renamegroup);      // Rename  Group Chat 
 
 router.route('/groupremove').put(protect , removefromgroup);  // Remove  from Group 
 

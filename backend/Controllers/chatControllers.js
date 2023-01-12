@@ -6,8 +6,7 @@ const User = require('../models/UserModel');
 // For creating One -- One Chat 
 const accesschat =  asyncHandler(async (req,res) => {
 
-     const {  userid  } = req.body;         // get the user id current 
-
+     const {  userid  } = req.body;         
     if(!userid){                
         console.log(' Userid param not sent with Request ');
         return res.sendStatus(400);
